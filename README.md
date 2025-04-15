@@ -9,7 +9,7 @@
 ---
 
 ## 🌐 Live Website  
-🔗 [Visit Droply Website](https://parcel-transpotation.web.app/)
+🔗 [Visit Droply Website](https://droply-7f8eb.web.app)
 
 ---
 
