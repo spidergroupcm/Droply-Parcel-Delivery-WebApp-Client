@@ -1,31 +1,45 @@
-# 🚚 Droply – Parcel Delivery Web Application
+# 📦 Droply - Smart Parcel Transportation Platform
 
-![Droply Homepage](https://i.ibb.co/1GnRx9xJ/Droply.png)
+**Droply** is a full-featured parcel transportation platform designed for **seamless package management**, **real-time delivery tracking**, and **role-based control**. Built for **customers**, **delivery agents**, and **admins**, Droply ensures a smooth and powerful user experience across the board.
 
-## 📦 Project Overview
-
-**Droply** is a full-featured parcel transportation platform designed for seamless package management, delivery tracking, and role-based control. It offers a robust and intuitive experience for **customers**, **delivery agents**, and **admins**.
+🔗 **Live Website:** [https://droply-7f8eb.web.app](https://droply-7f8eb.web.app)
 
 ---
 
-## 🌐 Live Website  
-🔗 [Visit Droply Website](https://droply-7f8eb.web.app)
+## 🎯 Project Overview
 
----
+<div align="center">
+  <img src="https://i.ibb.co/qM1jXSDc/droply-home.jpg" alt="Droply Banner" style="border-radius: 12px;" />
+</div>
+
+
 
 ## 🎯 Key Features
 
 ### 👤 Customer Panel
 - 📦 Real-time parcel tracking  
-- 🗂️ Access to delivery history  
+- 🗂️ Access to full delivery history  
 
 ### 🚴 Delivery Personnel Dashboard
-- 📋 View and manage assigned deliveries  
-- ✅ Update parcel delivery status in real time  
+- 📋 View and manage assigned parcels  
+- ✅ Instantly update parcel delivery status  
 
 ### 🛠️ Admin Dashboard
-- 👥 User and parcel management  
-- 🔐 Role-based access with secure JWT authentication  
+- 👥 Manage users and parcels with full control  
+- 🔐 Secure role-based access (JWT protected)  
+
+---
+
+## 🖼️ UI Snapshots
+
+<table>
+  <tr>
+    <td align="center"><b>🛠️ Admin Dashboard</b></td>
+  </tr>
+  <tr>
+    <td><img src="https://i.ibb.co/v4hcYH6Q/droply-dashboard.jpg" alt="Droply Admin Dashboard" width="100%"/></td>
+  </tr>
+</table>
 
 ---
 
@@ -33,55 +47,23 @@
 
 ### 💻 Frontend
 - React, Tailwind CSS, DaisyUI  
-- ApexCharts, Recharts, React Query, React Router  
-- Stripe.js for payment handling  
+- ApexCharts, Recharts, React Query  
+- React Router DOM, Stripe.js  
 
 ### 🖥️ Backend
 - Node.js, Express.js  
-- MongoDB  
-- Stripe for payments  
+- MongoDB (Mongoose)  
+- Stripe for secure payment integration  
 
-### 🔐 Authentication
+### 🔐 Authentication & Authorization
 - Firebase Authentication  
-- JWT for backend authorization  
+- JWT for protected API routes  
 
 ### 🚀 Deployment
-- Firebase (Client)  
-- Vercel / Render (Server)  
+- **Client:** Firebase Hosting  
+- **Server:** Vercel 
 
 ---
 
-## 🧪 Environment Setup
-
-### 📁 Step 1: Clone Repositories
-
-**Client**
-```bash
-git clone https://github.com/spidergroupcm/Droply-Delivery-Website-Client.git
-cd parcel-transport-client
-```
-
-**Server**
-```bash
-git clone https://github.com/spidergroupcm/Droply-Delivery-Website-Server.git
-cd parcel-transport-server
-```
 
 
-### 📌 Client-Side  
-Includes:
-- React, Firebase, Tailwind CSS, DaisyUI  
-- ApexCharts, Recharts, Stripe.js, Axios  
-- Leaflet, React Icons, SweetAlert2, etc.
-
-### 📌 Server-Side  
-Includes:
-- Express, MongoDB, JWT, Dotenv, CORS, Stripe
-
----
-
-## 👨‍💻 Developer  
-**ASM Mohebullah**  
-MERN Stack Developer | +88 01789711089 | Bangladesh
-
->
