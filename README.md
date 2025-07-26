@@ -67,43 +67,6 @@ git clone https://github.com/spidergroupcm/Droply-Delivery-Website-Server.git
 cd parcel-transport-server
 ```
 
-### 🔑 Step 2: Set Environment Variables
-
-**Client `.env`**
-```env
-VITE_apiKey=your_firebase_api_key
-VITE_authDomain=your_firebase_auth_domain
-VITE_projectId=your_firebase_project_id
-VITE_storageBucket=your_firebase_storage_bucket
-VITE_messagingSenderId=your_messaging_sender_id
-VITE_appId=your_firebase_app_id
-```
-
-**Server `.env`**
-```env
-DB_USER=your_db_user
-DB_PASS=your_db_password
-ACCESS_TOKEN_SECRET=your_jwt_secret
-STRIPE_SECRET_KEY=your_stripe_secret_key
-```
-
-### 📦 Step 3: Install Dependencies
-
-**Client**
-```bash
-npm install
-npm run dev
-```
-
-**Server**
-```bash
-npm install
-nodemon start
-```
-
----
-
-## 📚 Dependencies
 
 ### 📌 Client-Side  
 Includes:
