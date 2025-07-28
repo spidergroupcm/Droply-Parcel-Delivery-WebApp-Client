@@ -3,78 +3,77 @@ import useAuth from '../../../hooks/useAuth';
 import useRole from '../../../hooks/useRole';
 
 const UserNav = () => {
-    const { user, logOut } = useAuth()
-    const [role, isLoading] = useRole()
+  const { user, logOut } = useAuth();
+  const [role, isLoading] = useRole();
 
-    const handleLogout = () => {
-        logOut()
-            .then(() => {
-                // console.log('successfully Logout')
-            })
-            .catch(error => {
-                // console.log('Error by Logout ', error)
-            })
-    }
+  const handleLogout = () => {
+    logOut()
+      .then(() => {
+        // Logout success
+      })
+      .catch(error => {
+        console.error('Logout Error:', error);
+      });
+  };
 
-    return (
-        <div className="dropdown dropdown-end">
-            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                <div className="w-10 h-10 border-2 border-slate-100 rounded-full">
-                    <img
-                        alt="Tailwind CSS Navbar component"
-                        src={user?.photoURL} />
-                </div>
-            </div>
-            <ul
-                tabIndex={0}
-                className="menu menu-sm gap-2 dropdown-content bg-black/50 backdrop-blur-lg  rounded-box z-[1] mt-3 p-2 shadow">
-                <li>
-                    <button 
-                    className="bg-black/5 whitespace-nowrap hover:bg-gray-900" disabled={true}>{user?.displayName}</button>
-                </li>
-                {/* for user */}
-                {role === 'User' &&
+  const buttonStyle = 'bg-orange-500 hover:bg-green-500 text-white px-4 py-2 rounded-lg text-sm whitespace-nowrap transition duration-300';
 
-                    <li>
-                        <NavLink to='/dashboard/my-profile' 
-                        className='bg-black/5 whitespace-nowrap hover:bg-gray-900'>
-                            Dashboard
-                        </NavLink>
-                    </li>
-                }
-
-                {/* for Delivery Man */}
-                {
-                    role === 'DeliveryMen' &&
-                    <>
-                        <li>
-                            <NavLink to='/dashboard/my-delivery-list' className='bg-black/5 whitespace-nowrap hover:bg-gray-800'>
-                                Dashboard
-                            </NavLink>
-                        </li>
-                    </>
-                }
-
-                {/* for Admin */}
-
-                {
-                    role === 'Admin' &&
-                    <>
-                        <li>
-                            <NavLink to='/dashboard' className='bg-black/5 whitespace-nowrap hover:bg-gray-900'>
-                                Dashboard
-                            </NavLink>
-                        </li>
-                    </>
-                }
-                <li>
-                    <button onClick={handleLogout} className="bg-black/5 whitespace-nowrap hover:bg-gray-900">
-                        Log Out
-                    </button>
-                </li>
-            </ul>
+  return (
+    <div className="dropdown dropdown-end">
+      {/* Avatar Button */}
+      <div tabIndex={0} role="button" className="btn btn-circle avatar">
+        <div className="w-10 h-10 border-2 border-slate-200 rounded-full overflow-hidden">
+          <img alt="user avatar" src={user?.photoURL} />
         </div>
-    );
+      </div>
+
+      {/* Dropdown Menu */}
+      <ul
+        tabIndex={0}
+        className="menu menu-sm gap-2 dropdown-content bg-white rounded-box z-[100] mt-3 p-3 shadow-xl border border-gray-100"
+      >
+        {/* User Name */}
+        <li>
+          <button className="text-sm font-semibold text-gray-800 cursor-default" disabled>
+            {user?.displayName}
+          </button>
+        </li>
+
+        {/* Role-based Dashboards */}
+        {role === 'User' && (
+          <li>
+            <NavLink to="/dashboard/my-profile" className={buttonStyle}>
+              Dashboard
+            </NavLink>
+          </li>
+        )}
+
+        {role === 'DeliveryMen' && (
+          <li>
+            <NavLink to="/dashboard/my-delivery-list" className={buttonStyle}>
+              Dashboard
+            </NavLink>
+          </li>
+        )}
+
+        {role === 'Admin' && (
+          <li>
+            <NavLink to="/dashboard" className={buttonStyle}>
+              Dashboard
+            </NavLink>
+          </li>
+        )}
+
+        {/* Logout */}
+        <li>
+          <button onClick={handleLogout} className={buttonStyle}>
+            Log Out
+          </button>
+        </li>
+      </ul>
+    </div>
+  );
 };
 
 export default UserNav;
+
