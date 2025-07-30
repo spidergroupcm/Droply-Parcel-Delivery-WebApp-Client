@@ -15,7 +15,7 @@ const Home = () => {
     return (
         <div>
             <Helmet>
-            <title>Home | Droply</title>
+            <title>Droply</title>
             </Helmet>
             <div>
                 <Banner></Banner>

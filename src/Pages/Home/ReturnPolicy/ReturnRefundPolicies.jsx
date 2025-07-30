@@ -1,62 +1,76 @@
 import React from "react";
-import { FaUndo, FaMoneyBillWave, FaEnvelope } from "react-icons/fa";
+import { FaUndo, FaMoneyBillWave, FaEnvelope, FaInfoCircle } from "react-icons/fa";
 
 const ReturnRefundPolicies = () => {
+  const policies = [
+    {
+      icon: <FaUndo className="text-orange-600 text-3xl" />,
+      title: "Return",
+      content: (
+        <ul className="list-disc pl-5 text-gray-600 space-y-1 text-sm">
+          <li>Late delivery returns accepted.</li>
+          <li>Return damaged or lost items.</li>
+        </ul>
+      ),
+    },
+    {
+      icon: <FaMoneyBillWave className="text-orange-600 text-3xl" />,
+      title: "Refund",
+      content: (
+        <ul className="list-disc pl-5 text-gray-600 space-y-1 text-sm">
+          <li>Refund for faulty parcels.</li>
+          <li>Refund if delayed beyond time.</li>
+        </ul>
+      ),
+    },
+    {
+      icon: <FaEnvelope className="text-orange-600 text-3xl" />,
+      title: "Contact",
+      content: (
+        <div className="text-gray-600 text-sm text-center space-y-1">
+          <p>📞 01789711089</p>
+          <p>📩 support@droply.com</p>
+        </div>
+      ),
+    },
+    {
+      icon: <FaInfoCircle className="text-orange-600 text-3xl" />,
+      title: "Conditions",
+      content: (
+        <ul className="list-disc pl-5 text-gray-600 space-y-1 text-sm">
+          <li>Must be unused & packed.</li>
+          <li>Proof of delivery needed.</li>
+        </ul>
+      ),
+    },
+  ];
+
   return (
-    <div className="mx-auto px-8 py-8 bg-white rounded-xl border shadow">
-      <h1 className="text-orange-600 font-bold md:text-4xl text-3xl text-center mb-6">
-        Return & Refund Policies
+    <section className="bg-gradient-to-br from-orange-50 to-white py-16 px-4 md:px-10 rounded-xl shadow-inner max-w-7xl mx-auto">
+      <h1 className="text-3xl md:text-4xl font-bold text-center text-orange-600 mb-12">
+        Easy Returns & Fast Refunds
       </h1>
 
-      <div className="flex flex-col lg:flex-row justify-between gap-6">
-        {/* Return Policy */}
-        <div className="flex-1 bg-orange-50 p-4 rounded-lg shadow-sm">
-          <h2 className="text-3xl font-semibold flex items-center gap-2 text-gray-800 mb-4">
-            <FaUndo className="text-orange-500" />
-            Return Policy
-          </h2>
-          <ul className="list-disc pl-5 text-lg text-gray-700 space-y-1">
-            <li>Parcel not delivered on time.</li>
-            <li>Parcel damaged or lost.</li>
-            <li>Return within 7 days.</li>
-          </ul>
-        </div>
-
-        {/* Refund Policy */}
-        <div className="flex-1 bg-orange-50 p-4 rounded-lg shadow-sm">
-          <h2 className="text-3xl font-semibold flex items-center gap-2 text-gray-800 mb-4">
-            <FaMoneyBillWave className="text-orange-500" />
-            Refund Policy
-          </h2>
-          <ul className="list-disc pl-5 text-lg text-gray-700 space-y-1">
-            <li>Lost/unusable parcel.</li>
-            <li>Delayed beyond guarantee.</li>
-            <li>Meets return terms.</li>
-          </ul>
-          <p className="text-sm text-gray-700 mt-2">
-           
-          </p>
-        </div>
-
-        {/* How to Request */}
-        <div className="flex-1 bg-orange-50 p-4 rounded-lg shadow-sm">
-          <h2 className="text-3xl font-semibold flex items-center gap-2 text-gray-800 mb-4">
-            <FaEnvelope className="text-orange-500" />
-            How to Request
-          </h2>
-          <p className="text-lg text-gray-700">
-            📞 01789711089 <br/>
-            📩 support@droply.com <br/>
-           
-            with your tracking number and reason.  <br />
-            Refunds processed within 5–7 business days.
-          </p>
-        </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {policies.map((policy, idx) => (
+          <div
+            key={idx}
+            className="bg-white p-6 rounded-2xl border border-orange-100 hover:border-orange-400 shadow-sm hover:shadow-lg transition-all duration-300"
+          >
+            <div className="flex flex-col items-center mb-4">
+              <div className="bg-orange-100 p-4 rounded-full shadow mb-3">
+                {policy.icon}
+              </div>
+              <h2 className="text-lg font-semibold text-gray-800 text-center">{policy.title}</h2>
+            </div>
+            <div>{policy.content}</div>
+          </div>
+        ))}
       </div>
-
-     
-    </div>
+    </section>
   );
 };
 
 export default ReturnRefundPolicies;
+
+
